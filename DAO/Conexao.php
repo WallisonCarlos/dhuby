@@ -16,7 +16,7 @@ namespace DAO;
 
 class Conexao {
     
-    private $instancia;
+    private static $instancia;
     
     private function __construct() {
         
