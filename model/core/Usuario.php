@@ -7,7 +7,7 @@
  */
 require 'Endereco.php';
 
-namespace Model;
+namespace Model\Core;
 /**
  * Description of Usuario
  *
