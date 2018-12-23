@@ -91,5 +91,17 @@ class UsuarioDAO {
         }
     }
     
+     private function populaUsuario($row) : \Model\Core\Modulo {
+        $usuario = new \Model\Core\Usuario();
+        $usuario->setCodUsuario($row['codUsuario']);
+        $usuario->setNome($row['nome']);
+        $usuario->setUsername($row['username']);
+        $usuario->setEmail($row['email']);
+        $usuario->setSenha($row['senha']);
+        $usuario->setEndreco($row['endereco']);
+        $usuario->setAvatar($row['avatar']);
+        return $usuario;
+               
+    }
     
 }
