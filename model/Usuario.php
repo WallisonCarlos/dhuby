@@ -27,48 +27,48 @@ class Usuario {
         
     }
     
-    function getCodUsuario() {
+    public function getCodUsuario() :int {
         return $this->codUsuario;
     }
 
-    function getNome() {
+    public function getNome() :string {
         return $this->nome;
     }
 
-    function getUsername() {
+    public function getUsername() :string {
         return $this->username;
     }
 
-    function getEmail() {
+    public function getEmail() :string{
         return $this->email;
     }
 
-    function getSenha() {
+    public function getSenha() :string{
         return $this->senha;
     }
 
-    function getEndereco() {
+    public function getEndereco() :\Model\Endereco {
         return $this->endereco;
     }
 
-    function getAvatar() {
+    public function getAvatar() :string {
         return $this->avatar;
     }
 
-    function setCodUsuario($codUsuario) {
+    public function setCodUsuario(int $codUsuario) {
         $this->codUsuario = $codUsuario;
     }
 
-    function setNome($nome) {
-        if ($nome != null || !empty($nome)) {
+    public function setNome(string $nome) {
+        if ($nome != null && !empty($nome)) {
             $this->nome = $nome;
         } else {
             throw new Exception("Digite o seu nome!");
         }
     }
 
-    function setUsername($username) {
-        if ($username == null || empty($username)) {
+    public function setUsername(string $username) {
+        if ($username == null && empty($username)) {
             throw new Exception("Digite o seu username!");
         } else if (!preg_match("/^[a-z0-9]{6,10}$/", $username)) {
             throw new Exception("Username inválido! (Use somente letras e números de 6 a 10 caracteres)");
@@ -77,8 +77,8 @@ class Usuario {
         }
     }
 
-    function setEmail($email) {
-        if ($email == null || empty($email)) {
+    public function setEmail(string $email) {
+        if ($email == null && empty($email)) {
             throw new Exception("Digite o seu e-mail!");
         } else if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $email)) {
             throw new Exception("E-mail inválido!");
@@ -87,8 +87,8 @@ class Usuario {
         }
     }
 
-    function setSenha($senha) {
-        if ($senha == null || empty($senha)) {
+    public function setSenha(string $senha) {
+        if ($senha == null && empty($senha)) {
             throw new Exception("Digite o seu senha!");
         } else if (strlen($senha) >= 6) {
             throw new Exception("Sua senha deve ter 6 ou mais caracteres!");
@@ -97,7 +97,7 @@ class Usuario {
         }
     }
 
-    function setEndereco(\Model\Endereco $endereco) {
+    public function setEndereco(\Model\Endereco $endereco) {
         if ($endereco != null) {
             $this->endereco = $endereco;
         } else {
@@ -105,8 +105,8 @@ class Usuario {
         }
     }
 
-    function setAvatar($avatar) {
-        if ($avatar != null || !empty($avatar)) {
+    public function setAvatar(string $avatar) {
+        if ($avatar != null && !empty($avatar)) {
             $this->avatar = $avatar;
         } else {
             throw new Exception("Avatar não pode ser vazio, selecione uma imagem!");
