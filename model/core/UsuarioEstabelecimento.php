@@ -16,9 +16,11 @@ namespace Model\Core;
  * @author walli
  */
 class UsuarioEstabelecimento extends \Model\Usuario{
-    //put your code here
+    
     private $cnpj;
     private $clientes;
+    private $produtos;
+    private $caixa;
     
     public function __construct() {
         parent::__construct();
@@ -40,5 +42,26 @@ class UsuarioEstabelecimento extends \Model\Usuario{
         $this->clientes = $clientes;
     }
 
+    function getProdutos() : \Model\Collections\Collection {
+        return $this->produtos;
+    }
 
+    function setProdutos(\Model\Collections\Collection $produtos) {
+        $this->produtos = $produtos;
+    }
+
+    function getCaixa() : \Model\Core\Caixa {
+        return $this->caixa;
+    }
+
+    function setCaixa(\Model\Core\Caixa $caixa) {
+        if ($caixa != null) {
+            $this->caixa = $caixa;
+        } else {
+            throw new Exception("Estabelecimento deve conter um caixa!");
+        }
+    }
+
+
+    
 }
