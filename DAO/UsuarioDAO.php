@@ -6,11 +6,10 @@
  * and open the template in the editor.
  */
 require 'Conexao.php';
-require '../model/Usuario.php';
+require '../model/core/Usuario.php';
 
 namespace DAO;
 
-use Model;
 /**
  * Description of UsuarioDAO
  *
@@ -23,7 +22,7 @@ class UsuarioDAO {
      
     }
 
-    public function adicionarUsuario(Model\Usuario $usuario) {
+    public function adicionarUsuario(Model\Core\Usuario $usuario) {
         
         try {
             
@@ -40,7 +39,7 @@ class UsuarioDAO {
         
     }
     
-    public function atualizaUsuario(Model\Usuario $usuario) {
+    public function atualizaUsuario(Model\Core\Usuario $usuario) {
         
         try {
             $sql = "UPDATE usuario set
@@ -64,7 +63,7 @@ class UsuarioDAO {
     
     }
     
-    public function removeUsuario(Model\Usuario $usuario){
+    public function removeUsuario(Model\Core\Usuario $usuario){
         
         try {
             

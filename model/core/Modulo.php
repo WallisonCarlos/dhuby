@@ -43,7 +43,7 @@ class Modulo{
 
     function setNome(string $nome) {
         $this->nome = $nome;
-        if ($nome != null || !empty($nome)) {
+        if ($nome != null && !empty($nome)) {
             $this->nome = $nome;
         } else {
             throw new Exception("Digite o seu nome!");
@@ -62,10 +62,8 @@ class Modulo{
 
     function setValor(float $valor) {
         if($valor == NULL){
-        throw new Exception("Digite o valor!");
-            
-        }       
-        else if($valor >= 0){
+            throw new Exception("Digite o valor!");
+        } else if($valor >= 0){
             $this->valor = $valor;
         } else {
             throw new Exception("Valor inválido!");
