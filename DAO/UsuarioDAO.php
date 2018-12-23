@@ -39,7 +39,7 @@ class UsuarioDAO {
         
     }
     
-    public function atualizaUsuario(Model\Core\Usuario $usuario) {
+    public function atualizarUsuario(Model\Core\Usuario $usuario) {
         
         try {
             $sql = "UPDATE usuario set
